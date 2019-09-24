@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function(){
         wrapPopup[0].style.display = "none";
         sideBar.classList.remove("visible");
         body[0].style.position = "";
+        for (let i = 0; i < subNav.length ; i++) {
+            subNav[i].className = "iconOut fa fa-plus-square-o d-none";
+        }
     })
     // Handling For Toggle Slide Bar;
     for (let i = 0; i < subNav.length; i++) {
@@ -77,18 +80,17 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
                 navDropdown[i].classList.add("subMenu");
             }
-            console.log(subNav[i]);
         })
     } 
     for (let i = 0; i < subNavInner.length; i++) {
         subNavInner[i].addEventListener("click", function(){
             if (subNavInner[i].classList[2] == "fa-minus-square-o") {
-                subNavInner[i].setAttribute("class", "iconInner fa fa-plus-square-o");
+                subNavInner[i].setAttribute("class", "iconInner fa fa-plus-square-o float-right d-none");
                 navDropdownInner[i].classList.remove("subMenu");
                 this.style.backgroundColor = "#414141";
             } else {
                 for (let i = 0; i < subNavInner.length; i++) {
-                    subNavInner[i].setAttribute("class", "iconInner fa fa-plus-square-o");
+                    subNavInner[i].setAttribute("class", "iconInner fa fa-plus-square-o float-right d-none");
                     subNavInner[i].style.backgroundColor = "#414141";
                 }
                 this.style.backgroundColor = "#2a2a2a";
@@ -158,22 +160,13 @@ document.addEventListener("DOMContentLoaded", function(){
     var x = 0,
         slideNext = (productItem.length - 1) - 4;
     NextSlide.addEventListener("click", function(){
-        if (x > slideNext ) {
-            return;
-        } else {
-            slideProduct[0].classList.add("AniProduct" + x++);
-        }
+        if (x > slideNext ) { return; }
+        slideProduct[0].classList.add("AniProduct" + x++);
     });
     PrevSlide.addEventListener("click", function(){
-        if (x > slideNext ) {
-            x = slideNext;
-            slideProduct[0].classList.remove("AniProduct" + x);
-        } else if (x == 0) {
-            return;
-        } else if (x > 0) {
-            x--;
-            slideProduct[0].classList.remove("AniProduct" + (x));
-        } 
+        if (x == 0) { return; } 
+        x--;
+        slideProduct[0].classList.remove("AniProduct" + (x));
     });
     // Handling For Slides;
     for (let i = 0; i < dotSlideCLient.length; i++) {
@@ -203,13 +196,9 @@ document.addEventListener("DOMContentLoaded", function(){
     PrevSlide.addEventListener("click", function(){
         if (i == 0) {
             return;
-        } else if (i > nextItemBlog) {
-            i = nextItemBlog;
-            slideBlog[0].classList.remove("AniBlog" + i);
-        } else if ( i > 0 ) {
-            i--;
-            slideBlog[0].classList.remove("AniBlog" + i);
-        }
+        } 
+        i--;
+        slideBlog[0].classList.remove("AniBlog" + i);
     })
     // Handling For Slide Blog;
     var NextSlide = controlSlide[5],
@@ -231,10 +220,7 @@ document.addEventListener("DOMContentLoaded", function(){
     })
     // Handling For Slide Group Brand;
     btn.addEventListener("click", function(){
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
+       window.scrollTo(0,0);
     })
     // Handlind For Scroll To Top;
 },false)
