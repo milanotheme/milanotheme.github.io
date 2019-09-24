@@ -1523,8 +1523,12 @@ html {
 /* End Css For Ipad Big */
 @media only screen and (max-width: 767px) {
 
-.wrap-icon .fa-heart, .cart__price {
+.wrap-icon .fa-heart-o, .cart__price {
     display: none;
+}
+
+.wrap-icon .fa sup {
+    font-size: 11px;
 }
 
 #nav .nav-link.active {
