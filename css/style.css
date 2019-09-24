@@ -8,6 +8,10 @@ body, html {
     transition: 0.3s cubic-bezier(.39,.03,.93,.63);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #wrapper {
     min-width: 100%;
     overflow-x: hidden;
@@ -267,10 +271,10 @@ body, html {
 }
 
 .wrap-icon .fa sup {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background-color: #ff5555;
-    line-height: 20px;
+    line-height: 18px;
     text-align: center;
     font-size: 12px;
     display: inline-block;
@@ -1402,6 +1406,13 @@ body, html {
     opacity: 1;
 }
 
+.wrap-popup {
+    width: 700px;
+    height: 350px;
+    left: calc(50% - 350px);
+}
+
+
 .btn-outline-black {
     flex: 100%;
     max-width: 120px;
@@ -1512,6 +1523,10 @@ body, html {
 /* End Css For Ipad Big */
 @media only screen and (max-width: 767px) {
 
+.wrap-icon .fa-heart, .cart__price {
+    display: none;
+}
+
 #nav .nav-link.active {
     font-weight: 600;
     color: #fff !important;
@@ -1560,6 +1575,8 @@ ul.nav__list-small {
     position: initial;
     padding: 0px;
     display: none;
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-dropdown.subMenu , .nav__list-small.subMenu {
@@ -1623,6 +1640,7 @@ nav.navbar .nav-item {
     transition: 0.2s;
     -webkit-transition: 0.2s;
     animation: initial;
+    visibility: initial;
 }
 
 .bg-black.visible {
@@ -1701,16 +1719,35 @@ nav.navbar .nav-item {
 }
 
 .products-slide .main-slide .slides.AniProduct0 {
-    transform: translateX(calc(-100%/3));
+    transform: translateX(-100%);
 }
 
 .products-slide .main-slide .slides.AniProduct1 {
-    transform: translateX(calc((-100%/3) * 2));
+    transform: translateX(-200%);
 }
 
 .products-slide .main-slide .slides.AniProduct2 {
-    transform: translateX(calc((-100%/3) * 3));
+    transform: translateX(-300%);
 }
+
+.product__image .img-fluid {
+    min-width: 100%;
+}
+
+.tab__link {
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.tab__link span {
+    font-size: 10px;
+}
+
+.wrap-popup {
+    width: 600px;
+    left: calc(50% - 300px);
+}
+
 
 .blog-slide .controls .fa {
     
@@ -1722,7 +1759,17 @@ nav.navbar .nav-item {
 }
 
 .slide-brand .row.slides.AniBrand0 {
-    transform: translateX(-25%);
+    transform: translateX(calc(-100% / 3));
+}
+
+.controls .fa {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.controls .fa:first-child {
+    transform:translateX(25%);
 }
 
 .box-service {
@@ -1743,7 +1790,7 @@ nav.navbar .nav-item {
 
 .footer__top .form-group input[type="text"] {
     flex: 40%;
-    max-width: 40%;
+    max-width: 50%;
     margin: 0px 12px;
 }
 
@@ -1752,7 +1799,7 @@ nav.navbar .nav-item {
 }
 
 .btn-outline-black {
-    margin: 0px;
+    margin: 6px 0px;
 }
 
 .footer__main .row > div {
@@ -1761,4 +1808,42 @@ nav.navbar .nav-item {
 
 }
 
+@media only screen and (max-width: 576px) {
+
+.slide__caption {
+    top: 40%;
+}
+
+#slider, #sldier .main-slide, #slider .slides, #slider .slide-item {
+    height: 500px;
+}
+
+.caption__text-big {
+    font-size: 70px;
+    left: -6px;
+}
+
+.wrap-popup {
+    width: 340px;
+    left: calc(50% - 170px);
+}
+
+.wrap-popup #popup {
+    background-color: #fff;
+    background-image: none;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+.popup__desc {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.popup__form input[type="email"] {
+    padding: 10px;
+}
+
+}
 /* End Css For Ipad Small */
