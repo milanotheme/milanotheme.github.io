@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
         PrevSlide = controlSlide[0],
         autoSlide = setInterval(function(){ auto() },3000),
         dotSlideCLient = document.getElementsByClassName("dot__item-client"),
-        clientReview = document.querySelectorAll("#client .slide-item"),
+        clientReview = document.getElementById("wrap-client"),
         status = "start",
         toggleBar = document.getElementById("toggleBar");
         removePopup[0].addEventListener("click", function(){
@@ -175,11 +175,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 dotSlideCLient[i].classList.remove("active");
                 this.classList.add("active");
             }
-            for (let i = 0; i < clientReview.length; i++) {
-                clientReview[i].classList.remove("active");
-            }
-            clientReview[i].classList.add("active");
-
+             clientReview.style.transform = (this == dotSlideCLient[0]) ? "" : "translateX(-50%)";
         })
     } 
     // Handling For Slide Client Review;
