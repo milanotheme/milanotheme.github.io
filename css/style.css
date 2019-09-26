@@ -964,21 +964,6 @@ html {
     background-color: #ff5555;
     border: #ff5555;
 }
-
-.products-slide .main-slide .slides.AniProduct0 {
-    -webkit-transform: translateX(-25%);
-    transform: translateX(-25%);
-}
-
-.products-slide .main-slide .slides.AniProduct1 {
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-.products-slide .main-slide .slides.AniProduct2 {
-    -webkit-transform: translateX(-75%);
-    transform: translateX(-75%);
-}
 /* End Wrap Product */
 
 .client__content .desc {
@@ -1119,21 +1104,6 @@ html {
 
 .blog-slide .controls .fa, .slide-brand .controls .fa {
     top: calc(50% - 18px);
-}
-
-#blog .blog-slide .row.slides.AniBlog0 {
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-#blog .blog-slide .row.slides.AniBlog1 {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-}
-
-#blog .blog-slide .row.slides.AniBlog2 {
-    -webkit-transform: translateX(-150%);
-    transform: translateX(-150%);
 }
 
 /* End BLog */
@@ -1960,6 +1930,5 @@ nav.navbar .nav-item {
 .popup__form input[type="email"] {
     padding: 10px;
 }
-
 }
 /* End Css For Ipad Small */
